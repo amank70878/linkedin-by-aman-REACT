@@ -1,0 +1,12 @@
+link storage and firebase db 👍
+auth check 👍
+responsiveness 👍
+searchforuser -> todo- redurecting to login if no id is found 👍
+use uuid to give new names to video and image 👍
+adding loader when the articles are being uploaded 👍
+load the new articles as soon as one uploads 👍
+logout functionality 👍
+modal input responsiveness 👍
+drawer responsiveness 👍
+saving articles in different collections
+fetching articles by time
