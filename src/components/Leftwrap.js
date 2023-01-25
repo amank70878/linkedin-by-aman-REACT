@@ -241,17 +241,19 @@ const Second = styled.div`
   width: 240px;
   background-color: #fff;
   border-radius: 10px;
-  position: ${(props) => `${props.leftNavScroll ? "fixed" : ""}`};
-  top: ${(props) => `${props.leftNavScroll ? "65px" : ""}`};
   margin-top: 20px;
-
-  @media (max-width: 1200px) {
+  @media only screen and (max-width: 2000px) and (min-width: 800px) {
+    position: ${(props) => `${props.leftNavScroll ? "fixed" : ""}`};
+    top: ${(props) => `${props.leftNavScroll ? "65px" : ""}`};
+  }
+  @media only screen and (max-width: 1200px) and (min-width: 800px) {
     width: ${(props) => `${!props.leftNavScroll ? "100%" : ""}`};
   }
   @media screen and (max-width: 800px) {
-    position: relative;
+    /* position: relative; */
     margin-top: 20px;
     width: 100%;
+    /* position: none; */
   }
 
   .outer {

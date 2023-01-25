@@ -187,7 +187,7 @@ const ModalInput = () => {
 
                   <IconButton
                     className="modal__videoSrcBtn"
-                    onClick={() => setVideoSrc("")}
+                    onClick={() => setVideoSrc(null)}
                   >
                     <CloseIcon />
                   </IconButton>
