@@ -1,23 +1,23 @@
-export const fetchArticlesFunc = async (
+export const fetchArticleOfUser = async (
   query,
   collection,
+  where,
   getDocs,
   db,
-  orderBy,
   setFetchedArticles,
   setLoading,
   articleType,
   setEmptyArticles,
-  orderNew
+  profileid
 ) => {
   const _type = articleType === "image" ? "article__Images" : "article__Videos";
 
   const msgDataCollectionRef = collection(db, _type);
 
-  const q = orderNew
-    ? query(msgDataCollectionRef, orderBy("time", "desc"))
-    : query(msgDataCollectionRef, orderBy("time", "asc"));
-
+  const q = query(
+    msgDataCollectionRef,
+    where("post__userLoginId", "==", `${profileid}`)
+  );
   const docSnap = await getDocs(q);
   if (docSnap._snapshot.docs.size > 0) {
     setFetchedArticles(

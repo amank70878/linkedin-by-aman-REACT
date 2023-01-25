@@ -4,7 +4,6 @@ export const fetchUserByLocalToken = async (
   where,
   getDocs,
   db,
-  searchedUser,
   setSearchedUser,
   navigate,
   dispatch
@@ -32,20 +31,19 @@ export const fetchUserByLocalToken = async (
 
       dispatch({
         type: "setPageLoader",
-        payload: "none",
+        payload: false,
       });
-      navigate("/");
     } else {
       dispatch({
         type: "setPageLoader",
-        payload: "none",
+        payload: false,
       });
       navigate("login/");
     }
   } else {
     dispatch({
       type: "setPageLoader",
-      payload: "none",
+      payload: false,
     });
     navigate("login/");
   }

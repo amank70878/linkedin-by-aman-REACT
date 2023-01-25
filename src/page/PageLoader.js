@@ -26,11 +26,18 @@ const PageLoaderSection = styled.div`
     display: flex;
     align-items: center;
     gap: 20px;
+    @media screen and (max-width: 550px) {
+      flex-direction: column;
+    }
     > span {
       font-size: 1.2em;
       text-transform: capitalize;
       font-weight: 600;
       color: #fff;
+      @media screen and (max-width: 550px) {
+        font-size: 1em;
+        font-weight: 500;
+      }
     }
   }
 `;

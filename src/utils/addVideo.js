@@ -24,6 +24,6 @@ export const addVideo = async (
   });
   dispatch({
     type: "setPageLoader",
-    payload: "none",
+    payload: false,
   });
 };

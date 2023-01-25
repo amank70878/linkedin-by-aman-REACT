@@ -1,14 +1,7 @@
 import styled from "@emotion/styled";
 import { auth, provider } from "../firebaseConfig";
 import signInFunc from "../utils/auth";
-import {
-  addDoc,
-  query,
-  collection,
-  serverTimestamp,
-  where,
-  getDocs,
-} from "firebase/firestore";
+import { addDoc, query, collection, where, getDocs } from "firebase/firestore";
 import { db } from "../firebaseConfig";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -37,7 +30,6 @@ const Login = () => {
                 addDoc,
                 query,
                 collection,
-                serverTimestamp,
                 db,
                 where,
                 getDocs,
@@ -65,7 +57,6 @@ const Login = () => {
                   addDoc,
                   query,
                   collection,
-                  serverTimestamp,
                   db,
                   where,
                   getDocs,
@@ -91,9 +82,7 @@ const Login = () => {
         </Section>
       </Container>
       <Modal
-        open={
-          pageLoader === "none" ? false : pageLoader === "login" ? true : false
-        }
+        open={pageLoader === "login" ? true : false}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >

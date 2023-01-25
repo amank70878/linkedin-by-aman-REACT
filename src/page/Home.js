@@ -23,9 +23,10 @@ const Home = () => {
 
     return () => window.removeEventListener("scroll", onScrollRight);
   }, []);
+
   useEffect(() => {
     const onScrollLeft = () => {
-      if (window.pageYOffset > 370) {
+      if (window.pageYOffset > 385) {
         setLeftNavScroll(true);
       } else {
         setLeftNavScroll(false);
@@ -90,5 +91,9 @@ const Wrap = styled.div`
     padding: 20px 20px 10px 20px;
     padding-top: 70px;
     position: relative;
+  }
+  @media screen and (max-width: 500px) {
+    padding: 20px 10px;
+    padding-top: 70px;
   }
 `;

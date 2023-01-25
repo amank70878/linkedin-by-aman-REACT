@@ -5,7 +5,6 @@ const signInFunc = (
   addDoc,
   query,
   collection,
-  serverTimestamp,
   db,
   where,
   getDocs,
@@ -33,7 +32,7 @@ const signInFunc = (
 
           dispatch({
             type: "setPageLoader",
-            payload: "none",
+            payload: false,
           });
           navigate("/");
         } else {
@@ -43,7 +42,6 @@ const signInFunc = (
             user__name: data.user.displayName,
             user__email: data.user.email,
             user__profileImg: data.user.photoURL,
-            // time: serverTimestamp(),
           });
           localStorage.setItem(
             "linkedIn-by-aman-id",
@@ -51,7 +49,7 @@ const signInFunc = (
           );
           dispatch({
             type: "setPageLoader",
-            payload: "none",
+            payload: false,
           });
           navigate("/");
         }

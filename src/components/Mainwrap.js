@@ -4,7 +4,7 @@ import ImagesCards from "./ImagesCards";
 import Sharepost from "./Sharepost";
 import VideoCards from "./VideoCards";
 import { fetchArticlesFunc } from "../utils/fetchArticlesFunc";
-import { query, collection, where, getDocs, orderBy } from "firebase/firestore";
+import { query, collection, getDocs, orderBy } from "firebase/firestore";
 import { db } from "../firebaseConfig";
 import Loader from "./Loader";
 import MenuItem from "@mui/material/MenuItem";
@@ -29,7 +29,6 @@ const Mainwrap = () => {
     fetchArticlesFunc(
       query,
       collection,
-      where,
       getDocs,
       db,
       orderBy,
@@ -130,9 +129,7 @@ const Mainwrap = () => {
           ))}
       </MainWrap>
       <Modal
-        open={
-          pageLoader === "none" ? false : pageLoader === "input" ? true : false
-        }
+        open={pageLoader === "input" ? true : false}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >

@@ -8,5 +8,14 @@ load the new articles as soon as one uploads 👍
 logout functionality 👍
 modal input responsiveness 👍
 drawer responsiveness 👍
-saving articles in different collections
-fetching articles by time
+saving articles in different collections 👍
+fetching articles by time 👍
+loading responsiveness
+profile nav responsiveness 👍
+profile page 👍
+profile responsivenss 👍
+fetching profile articles according to article type 👍
+displaying all articles number 👍
+open profile page from every profile__box  👍
+profile user before and after lag 
+replace images with svgs

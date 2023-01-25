@@ -24,6 +24,6 @@ export const addImage = async (
   });
   dispatch({
     type: "setPageLoader",
-    payload: "none",
+    payload: false,
   });
 };

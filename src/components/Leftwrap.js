@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styled from "@emotion/styled";
 import { Avatar } from "@mui/material";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const Leftwrap = ({ leftNavScroll }) => {
   const { users: user } = useSelector((state) => state.linkedinReducer);
@@ -12,8 +13,16 @@ const Leftwrap = ({ leftNavScroll }) => {
         <First>
           <div className="one">
             <div className="bg"></div>
-            <Avatar src={user && user.user__profileImg} className="profile" />
-            <h4>{user && user.user__name}</h4>
+            <Link
+              to={`/profile/${localStorage.getItem("linkedIn-by-aman-id")}`}
+            >
+              <Avatar src={user && user.user__profileImg} className="profile" />
+            </Link>
+            <Link
+              to={`/profile/${localStorage.getItem("linkedIn-by-aman-id")}`}
+            >
+              <h4>{user && user.user__name}</h4>
+            </Link>
             <p>{user && user.user__email}</p>
           </div>
           <div className="two">
@@ -233,9 +242,11 @@ const Second = styled.div`
   background-color: #fff;
   border-radius: 10px;
   position: ${(props) => `${props.leftNavScroll ? "fixed" : ""}`};
-  margin-top: ${(props) => `${props.leftNavScroll ? "-10px" : "20px"}`};
-  @media screen and (max-width: 1200px) {
-    width: 100%;
+  top: ${(props) => `${props.leftNavScroll ? "65px" : ""}`};
+  margin-top: 20px;
+
+  @media (max-width: 1200px) {
+    width: ${(props) => `${!props.leftNavScroll ? "100%" : ""}`};
   }
   @media screen and (max-width: 800px) {
     position: relative;
